@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import Index from './page/index/index.js'
 
 ReactDOM.render(
-    <Index />,
+    <div>
+    <Index />
+    </div>,
     document.querySelector('#root')
 )

@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {store} from './store.js';
 import connect from '../../annx/reactstore';
 
+@connect(store)
 class Index extends Component {
 
     changeDate = type => {
@@ -11,14 +12,13 @@ class Index extends Component {
         })
     }
 
-
     render() {
         return (
             <>
                 <div>
                     <button onClick={() => this.changeDate('add')}>+</button>
                     {this.props.id}
-                    <button  onClick={() => this.changeDate('minute')}>-</button>
+                    <button onClick={() => this.changeDate('minute')}>-</button>
                 </div>
             </>
         )
@@ -26,4 +26,4 @@ class Index extends Component {
 }
 
 
-export default connect(store, Index);
+export default Index;

@@ -1,4 +1,7 @@
-import { createStore } from '../../annx/store';
+import { createStore } from '@lijianqiang01/annx/dist/dist/annx/index.js';
+
+
+console.log("createStore",createStore)
 
 //创建reducer容器
 let reducers = (state, action) => {

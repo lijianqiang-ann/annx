@@ -1,10 +1,18 @@
 const path = require('path')
 const HTMLWEBPACKPLUGIN = require('html-webpack-plugin')
 module.exports = {
-    entry: path.join(__dirname, 'src/root.js'),
+    entry: {
+        'annx': path.join(__dirname, 'src/annx/annx.js'),
+        'annx-react': path.join(__dirname, 'src/annx/annx-react.js')
+    },
     output: {
         path: path.join(__dirname, 'dist'),
-        filename: 'lib/lib-[hash:5].js',
+        filename: '[name]/index.js',
+        library: '@lijianqiang01/annx',
+        libraryTarget: 'umd',
+    },
+    resolve: {
+        mainFiles: ['index.js', 'index.jsx'],
     },
     module: {
         rules: [
@@ -15,19 +23,28 @@ module.exports = {
                     'babel-loader',
                 ],
             },
+            {
+                test: /\.(css)$/,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                ],
+            },
         ]
     },
-    plugins: [
-        new HTMLWEBPACKPLUGIN(
-            {
-                template: "./public/index.html"
-            }
-        )
-    ],
+    // plugins:
+    //     [
+    //         new HTMLWEBPACKPLUGIN(
+    //           {
+    //               template: "./public/index.html"
+    //           }
+    //         )
+    //     ],
     devServer: {
         open: true,
         hot: true,
         port: 4324,
     },
-    mode: 'development'
+    mode: 'production',
+    devtool: 'source-map'
 }

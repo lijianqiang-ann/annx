@@ -1,9 +1,12 @@
 import React, {Component} from 'react';
-import {store} from './store.js';
-import connect from '../../annx/reactstore';
+import {store} from './store';
+import connect from "@lijianqiang01/annx/dist/dist/annx-react";
 
 @connect(store)
 class Index extends Component {
+
+    componentDidMount() {
+    }
 
     changeDate = type => {
         store.dispatch({
@@ -11,7 +14,6 @@ class Index extends Component {
             payload: 1,
         })
     }
-
     render() {
         return (
             <>

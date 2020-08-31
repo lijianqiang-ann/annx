@@ -12,7 +12,7 @@
  */
 
 
-export const createStore = (reducers, initialState = {}, enhancer) => {
+export default function createStore(reducers, initialState = {}, enhancer) {
     // 初始化store
     let state = initialState;
     // 定义一个数组，保存监听的方法

@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Index from './page/index/index.js'
+import Index from "../example/index";
 
 ReactDOM.render(
     <div>
-    <Index />
+      <Index />
     </div>,
     document.querySelector('#root')
 )
